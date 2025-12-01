@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Habit Tracker</title>
+</head>
+<body class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="sidebar-title">Habits</h2>
+
+        <!-- Add New Habit Form -->
+        <section class="add-habit-section">
+            <h3 class="add-habit-title">Add New Habit</h3>
+            <form class="add-habit-form">
+                <input 
+                    type="text" 
+                    class="habit-input" 
+                    name="new-habit" 
+                    placeholder="Enter habit..."
+                    aria-label="New Habit Name"
+                >
+                <button type="submit" class="add-habit-button">Add</button>
+            </form>
+        </section>
+
+        <!-- Habit List -->
+        <nav class="habit-list">
+            <ul class="habit-list-items">
+                <li class="habit-item">Drink Water</li>
+                <li class="habit-item">Read 20 Min</li>
+                <li class="habit-item">Exercise</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="date-display">March 3, 2025</div>
+            <div class="streak-display">Streak: 12 days</div>
+        </header>
+
+        <!-- Today’s Habits -->
+        <section class="today-habits">
+            <h2 class="section-title">Today's Habits</h2>
+
+            <ul class="habit-checklist">
+                <li class="check-item">
+                    <label>
+                        <input type="checkbox" class="check-input">
+                        Drink Water
+                    </label>
+                </li>
+                <li class="check-item">
+                    <label>
+                        <input type="checkbox" class="check-input">
+                        Read 20 minutes
+                    </label>
+                </li>
+                <li class="check-item">
+                    <label>
+                        <input type="checkbox" class="check-input">
+                        Exercise
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Heatmap -->
+        <section class="heatmap-section">
+            <h2 class="section-title">Progress Heatmap</h2>
+            <div class="calendar-heatmap">
+                <!-- Heatmap will load here -->
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
