@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker (Structure Only)</title>
+</head>
+<body>
+
+    <div id="app-container">
+
+        <!-- 1. TOP BAR (Date and Streak) -->
+        <header id="top-header">
+            <div id="date-info">
+                <h1 id="date-title">Today: [Date Placeholder]</h1>
+            </div>
+            <div id="streak-display">
+                <span id="streak-label">Current Streak:</span>
+                <span id="streak-value">0 Days</span>
+            </div>
+        </header>
+
+        <!-- Main Content Layout -->
+        <div id="main-layout">
+
+            <!-- 2. SIDEBAR (Habit List + Add Form) -->
+            <aside id="sidebar-panel">
+                <section id="add-habit-module">
+                    <h2>Add New Habit</h2>
+                    <form id="habit-creation-form">
+                        <input type="text" id="habit-name-input" placeholder="e.g., Drink water" name="habitName" required>
+                        <button type="submit" id="add-habit-button">Add Habit</button>
+                    </form>
+                </section>
+
+                <nav id="habit-list-navigation">
+                    <h2>Your Habits</h2>
+                    <ul id="habit-list">
+                        <!-- Example Habit Items (Placeholder) -->
+                        <li>
+                            <span>Sample Habit One</span>
+                            <button>Edit</button>
+                        </li>
+                        <li>
+                            <span>Sample Habit Two</span>
+                            <button>Edit</button>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- 3. MAIN AREA (Today’s Habits with Checkboxes) -->
+            <main id="today-tasks-area">
+                <h2>Today's Focus</h2>
+                
+                <div id="task-list-container">
+                    
+                    <!-- Habit Task Card 1 (Placeholder) -->
+                    <div id="task-card-1">
+                        <input type="checkbox" id="task-1">
+                        <label for="task-1">Sample Habit One</label>
+                    </div>
+
+                    <!-- Habit Task Card 2 (Placeholder) -->
+                    <div id="task-card-2">
+                        <input type="checkbox" id="task-2">
+                        <label for="task-2">Sample Habit Two</label>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+
+        <!-- 4. BOTTOM SECTION (Calendar Heatmap) -->
+        <section id="heatmap-section">
+            <h2>Completion History</h2>
+            <div id="heatmap-visualization">
+                <!-- Placeholder for the calendar visualization grid -->
+                <p>Calendar visualization grid placeholder (e.g., 30 small boxes).</p>
+                <div id="heatmap-legend">
+                    <span>Low Progress</span>
+                    <span>High Progress</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
