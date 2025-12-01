@@ -1,0 +1,316 @@
+/* --- Global Styles and Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --color-primary: #4338ca; /* Indigo 700 */
+    --color-primary-light: #6366f1; /* Indigo 500 */
+    --color-secondary: #059669; /* Emerald 600 */
+    --color-background: #f9fafb; /* Gray 50 */
+    --color-surface: #ffffff;
+    --color-text-dark: #1f2937; /* Gray 800 */
+    --color-text-light: #4b5563; /* Gray 600 */
+    --border-radius-large: 0.75rem; /* 12px */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+#app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- 1. TOP BAR (Header) --- */
+#top-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--color-primary);
+}
+
+#date-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+#streak-display {
+    background-color: var(--color-primary-light);
+    color: var(--color-surface);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#streak-value::after {
+    content: " 🔥"; /* Adding a visual cue */
+}
+
+/* Media query for desktop header layout */
+@media (min-width: 768px) {
+    #top-header {
+        flex-direction: row;
+    }
+    #date-title {
+        margin-bottom: 0;
+    }
+}
+
+/* --- Main Layout Grid (Sidebar + Main) --- */
+#main-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    #main-layout {
+        grid-template-columns: 1fr 2fr; /* Sidebar (1/3) and Main (2/3) on desktop */
+    }
+}
+
+/* --- 2. SIDEBAR (Habit List + Add Form) --- */
+#sidebar-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#add-habit-module,
+#habit-list-navigation {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+#add-habit-module h2,
+#habit-list-navigation h2,
+#today-tasks-area h2,
+#heatmap-section h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Form Styling */
+#habit-creation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#habit-name-input {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#habit-name-input:focus {
+    border-color: var(--color-primary-light);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); /* Focus ring effect */
+}
+
+#add-habit-button {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-habit-button:hover {
+    background-color: #047857; /* Darker Emerald */
+}
+
+/* Habit List Styling */
+#habit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#habit-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+#habit-list li:hover {
+    background-color: #f3f4f6;
+}
+
+#habit-list li span {
+    font-weight: 500;
+}
+
+#habit-list li button {
+    background: none;
+    border: none;
+    color: var(--color-primary-light);
+    cursor: pointer;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+#habit-list li button:hover {
+    opacity: 1;
+}
+
+/* --- 3. MAIN AREA (Today’s Tasks) --- */
+#today-tasks-area {
+    padding: 0;
+}
+
+#task-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Task Card Styling */
+#task-list-container > div {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid var(--color-primary-light);
+}
+
+#task-list-container > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Checkbox and Label */
+input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    border: 2px solid #9ca3af;
+    appearance: none;
+    cursor: pointer;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#task-list-container label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+/* Completion state visual feedback */
+#task-list-container input[type="checkbox"]:checked + label {
+    color: var(--color-text-light);
+    text-decoration: line-through;
+}
+
+/* --- 4. BOTTOM SECTION (Calendar Heatmap) --- */
+#heatmap-section {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+#heatmap-visualization {
+    display: flex;
+    flex-wrap: wrap; /* Allows the cells to wrap naturally */
+    gap: 4px;
+    padding: 1rem;
+    justify-center: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+}
+
+#heatmap-visualization p {
+    color: var(--color-text-light);
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+}
+
+/* Styling for the individual calendar cells (placeholder) */
+#heatmap-visualization > div:not(#heatmap-legend) {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background-color: #ebedf0; /* Default color for an empty day */
+    transition: background-color 0.3s;
+    /* Placeholder colors for demonstration: */
+    /* .level-0 { background-color: #ebedf0; } */
+    /* .level-1 { background-color: #9be9a8; } */
+    /* .level-2 { background-color: #40c463; } */
+    /* .level-3 { background-color: #30a14e; } */
+    /* .level-4 { background-color: #216e39; } */
+}
+
+#heatmap-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    width: 100%;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    gap: 1rem;
+}
