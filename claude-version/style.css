@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f5f7fa;
+    color: #2d3748;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+.header {
+    grid-column: 1 / -1;
+    background: white;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-display {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.streak-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #edf2f7;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.streak-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5a67d8;
+}
+
+.streak-label {
+    font-size: 0.875rem;
+    color: #4a5568;
+}
+
+.sidebar {
+    background: white;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding:
