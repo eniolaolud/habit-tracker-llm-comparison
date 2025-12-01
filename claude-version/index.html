@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="date-display">Sunday, November 30, 2025</div>
+            <div class="streak-indicator">
+                <span class="streak-number" id="streak-number">0</span>
+                <span class="streak-label">day streak</span>
+            </div>
+        </header>
 
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">My Habits</h2>
+                <form class="add-habit-form" id="add-habit-form">
+                    <input type="text" class="habit-input" id="habit-input" placeholder="New habit..." required>
+                    <button type="submit" class="add-button">Add</button>
+                </form>
+            </div>
+            <div class="habits-list" id="habits-list">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📝</div>
+                    <div class="empty-state-text">Add your first habit to get started</div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h2 class="section-title">Today's Progress</h2>
+                <div class="today-habits" id="today-habits">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">✨</div>
+                        <div class="empty-state-text">No habits yet. Add one to begin tracking!</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Activity Heatmap</h2>
+                <div class="calendar-heatmap" id="calendar-heatmap"></div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
