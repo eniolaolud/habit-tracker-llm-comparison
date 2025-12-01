@@ -162,8 +162,8 @@ const renderHeatmap = () => {
     
     // We only need the legend placeholder text to remain
     const legend = document.getElementById('heatmap-legend');
-    if (legend) {
-        legend.remove();
+    if (legend && legend.parentNode) {
+        legend.parentNode.removeChild(legend);
     }
 
     const today = new Date();
